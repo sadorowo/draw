@@ -4,7 +4,12 @@ document.addEventListener('mouseup', stopPainting);
 document.addEventListener('mousemove', draw);
 window.addEventListener('resize', resize);
 
+const colorSelector = document.getElementById('colorSelector');
+const weightSlider = document.getElementById('weightSlider');
+const clearButton = document.getElementById('clearButton');
+const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+
 let color = 'green';
 let weight = 5;
 
@@ -23,7 +28,6 @@ document.addEventListener('wheel', e => {
 clearButton.addEventListener('click', () => ctx.clearRect(0, 0, canvas.width, canvas.height))
 weightSlider.addEventListener('change', e => weight = e.target.value)
 colorSelector.addEventListener('change', e => color = e.target.value)
-
 resize();
 
 function resize() {

@@ -11,7 +11,8 @@
 
 <body>
     <div id="menu">
-        <select id="colorSelect">
+        <label for="colorSelector">Wybierz kolor: </label>
+        <select id="colorSelector">
             <option value="green">Zielony</option>
             <option value="red">Czerwony</option>
             <option value="yellow">Żółty</option>
@@ -20,9 +21,8 @@
             <option value="black">Czarny</option>
             <option value="lime">Limonkowy</option>
         </select>
-        <label for="colorSelect">Wybierz kolor: </label>
-        <input type="range" min="5" max="40" value="5" id="weightSlider"/>
         <label for="weightSlider">Wybierz grubość linii: </label>
+        <input type="range" min="5" max="40" value="5" id="weightSlider"/>
         <button id="clearButton">Wyczyść rysunek!</button>
     </div>
     <canvas id="canvas"></canvas>
