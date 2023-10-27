@@ -13,6 +13,18 @@ const ctx = canvas.getContext('2d');
 let color = 'green';
 let weight = 5;
 
+document.addEventListener('wheel', e => {
+    if (e.deltaY > 0) {
+        if (weight + 5 > 40) return;
+        weight += 5;
+    } else {
+        if (weight - 5 <= 0) return;
+        weight -= 5;
+    }
+
+    weightSlider.value = weight;
+})
+
 clearButton.addEventListener('click', () => ctx.clearRect(0, 0, canvas.width, canvas.height))
 weightSlider.addEventListener('change', e => weight = e.target.value)
 colorSelector.addEventListener('change', e => color = e.target.value)
